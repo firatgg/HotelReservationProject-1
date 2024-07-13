@@ -15,5 +15,9 @@ namespace Entity.ViewModels
         public DateTime CheckOutDate { get; set; }
         public decimal TotalPrice { get; set; }
         public string ReservationStatus { get; set; }
+
+        public string City { get; set; }
+        public string Type { get; set; }
+
     }
 }

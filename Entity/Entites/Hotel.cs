@@ -21,5 +21,6 @@ namespace Entity.Entites
 
 		// Navigation Property
 		public ICollection<Room> Rooms { get; set; }
+        
     }
 }

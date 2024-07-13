@@ -20,11 +20,11 @@ namespace Data.Repositories
             _context = context;
         }
 
-        public async Task<List<HotelViewModel>> GetAvailableHotelsAsync(DateTime CheckInDate, DateTime CheckOutDate)
+        public async Task<List<HotelViewModel>> GetAvailableHotelsAsync(DateTime CheckInDate, DateTime CheckOutDate, string City)
         {
             var availableHotels = await _context.Hotels
-                .Where(h => h.Rooms.All(r => r.Reservations.All(rez => rez.CheckOutDate <= CheckInDate || rez.CheckInDate >= CheckOutDate)))
-                .ToListAsync();
+             .Where(h => h.City == City && h.Rooms.All(r => r.Reservations.All(rez => rez.CheckOutDate <= CheckInDate || rez.CheckInDate >= CheckOutDate)))
+             .ToListAsync();
 
             var hotelViewModels = availableHotels.Select(h => new HotelViewModel
             {

@@ -50,9 +50,9 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public async Task<List<HotelViewModel>> GetFilteredHotels(DateTime checkInDate, DateTime checkOutDate)
+        public async Task<List<HotelViewModel>> GetFilteredHotels(DateTime checkInDate, DateTime checkOutDate, string City)
         {
-            return await hotelRepository.GetAvailableHotelsAsync(checkInDate, checkOutDate);
+            return await hotelRepository.GetAvailableHotelsAsync(checkInDate, checkOutDate, City);
         }
 
     }
