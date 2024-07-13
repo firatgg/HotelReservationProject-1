@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RoleViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Oteller Listesi</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <a asp-action="Create" asp-controller="Role"  asp-area="Admin">Role Ekle</a>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Descriotion</td>
+                        
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+    </div>
+</div>
+

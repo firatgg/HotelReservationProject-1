@@ -1,0 +1,41 @@
+﻿@model List<HotelViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Oteller Listesi</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Description</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.HotelId</td>
+                        <td><strong>@item.Name</strong></td>
+                        <td>@item.Address</td>
+                        <td>@item.City</td>
+                        <td>@item.Country</td>
+                        <td>@item.Description</td>
+                        <td>@item.Rating</td>
+                    </tr>
+                }               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

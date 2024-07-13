@@ -1,0 +1,108 @@
+﻿@model List<Entity.ViewModels.RoomViewModel>
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_LayoutHotel.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adventure - Free Bootstrap 4 Template by Colorlib</title>
+</head>
+<body>
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+                <div class="col-md-9 text-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
+                    <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                        <span class="mr-2"><a href="index.html">Home</a></span> <span>Hotel</span>
+                    </p>
+                    <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="~/images/hotel-3.jpg" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="single-slider owl-carousel">
+                    <div class="item">
+                        <div class="hotel-img" style="background-image: url('~/images/hotel-2.jpg');"></div>
+                    </div>
+                    <div class="item">
+                        <div class="hotel-img" style="background-image: url('~/images/hotel-3.jpg');"></div>
+                    </div>
+                    <div class="item">
+                        <div class="hotel-img" style="background-image: url('~/images/hotel-4.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 hotel-single mt-4 mb-5 ftco-animate">
+                <span>Our Best hotels & Rooms</span>
+                <h2>Luxury Hotel in Paris</h2>
+                <p class="rate mb-5">
+                    <span class="loc"><a href="#"><i class="icon-map"></i> 291 South 21th Street, Suite 721 New York NY 10016</a></span>
+                    <span class="star">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star-o"></i>
+                        8 Rating
+                    </span>
+                </p>
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rhetoric question ran over her cheek, then she continued her way.</p>
+                <div class="d-md-flex mt-5 mb-5">
+                    <ul>
+                        <li>The Big Oxmox advised her not to do so</li>
+                        <li>When she reached the first hills of the Italic Mountains</li>
+                        <li>She had a last view back on the skyline of her hometown</li>
+                        <li>Bookmarksgrove, the headline of Alphabet</li>
+                    </ul>
+                    <ul class="ml-md-5">
+                        <li>Question ran over her cheek, then she continued</li>
+                        <li>Pityful a rhetoric question ran</li>
+                        <li>Mountains, she had a last view back on the skyline</li>
+                        <li>Headline of Alphabet Village and the subline</li>
+                    </ul>
+                </div>
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rhetoric question ran over her cheek, then she continued her way.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Our Rooms</h4>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 hotel-single ftco-animate mb-5 mt-4">
+                    <div class="destination">
+                        <a href="hotel-single.html" class="img img-2" style="background-image: url(@item.PictureUrl);"></a>
+                        <div class="text p-3">
+                            <div class="d-flex">
+                                <div class="one">
+                                    <h3>Type: @item.Type</h3>
+                                    <p>Oda Numarası: @item.RoomNumber</p>
+                                    <p>Fiyat: @item.Price ₺/gecelik</p>
+                                    <p>Açıklama: @item.Description</p>
+                                    <p>Müsaitlik: @(item.IsAvailable ? "Dolu" : "Boş")</p>
+                                    <p>Şehir: @item.City</p>
+                                    <p>Ülke: @item.Country</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="bottom-area d-flex">
+                                <span><i class="icon-map-o"></i> @item.City, @item.Country</span>
+                                <span class="ml-auto"><a href="#">Book Now</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
