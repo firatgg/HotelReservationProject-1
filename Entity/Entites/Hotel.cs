@@ -19,8 +19,8 @@ namespace Entity.Entites
         public double Rating { get; set; }
 		public string PictureUrl { get; set; }
 
-		// Navigation Property
-		public ICollection<Room> Rooms { get; set; }
+        // Navigation Property
+        public ICollection<Room> Rooms { get; set; }
         
     }
 }

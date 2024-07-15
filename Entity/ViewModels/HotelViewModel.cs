@@ -18,6 +18,6 @@ namespace Entity.ViewModels
 		public double Rating { get; set; }
 		public string PictureUrl { get; set; }
 
-       
+        public string Type { get; set; }
     }
 }

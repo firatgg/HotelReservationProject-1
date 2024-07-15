@@ -25,9 +25,9 @@ namespace HotelReservation.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> Filter(DateTime checkInDate, DateTime checkOutDate, string City)
+        public async Task<IActionResult> Filter(DateTime checkInDate, DateTime checkOutDate, string City, string Type)
         {
-			var hotel = await _hotelService.GetFilteredHotels( checkInDate,  checkOutDate, City);
+			var hotel = await _hotelService.GetFilteredHotels( checkInDate,  checkOutDate, City, Type);
 			return View(hotel);
 		}
         public  async Task<IActionResult> Detail(int Id)

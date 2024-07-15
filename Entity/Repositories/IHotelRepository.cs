@@ -10,6 +10,6 @@ namespace Entity.Repositories
 {
     public interface IHotelRepository
     {
-        Task<List<HotelViewModel>> GetAvailableHotelsAsync(DateTime CheckInDate, DateTime CheckOutDate, string City);
+        Task<List<HotelViewModel>> GetAvailableHotelsAsync(DateTime CheckInDate, DateTime CheckOutDate, string City, string Type);
     }
 }
