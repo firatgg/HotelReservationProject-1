@@ -1,0 +1,69 @@
+﻿@model Entity.ViewModels.PaymentViewModel
+
+@{
+    ViewData["Title"] = "Make a Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Varsayılan layout dosyanız
+}
+
+<section class="payment-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Payment Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Create" method="post" class="needs-validation" novalidate>
+                            <div class="form-group">
+                                <label asp-for="ReservationId" class="form-label">Reservation ID</label>
+                                <input asp-for="ReservationId" class="form-control" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PaymentDate" class="form-label">Payment Date</label>
+                                <input asp-for="PaymentDate" class="form-control" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Amount" class="form-label">Amount</label>
+                                <input asp-for="Amount" class="form-control" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PaymentMethod" class="form-label">Payment Method</label>
+                                <select asp-for="PaymentMethod" class="form-control" required>
+                                    <option value="" disabled selected>Select a payment method</option>
+                                    <option value="Credit Card">Credit Card</option>
+                                    <option value="Debit Card">Debit Card</option>
+                                    <option value="PayPal">PayPal</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a payment method.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Payment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+}

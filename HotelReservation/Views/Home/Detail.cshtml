@@ -96,8 +96,11 @@
                             <hr>
                             <p class="bottom-area d-flex">
                                 <span><i class="icon-map-o"></i> @item.City, @item.Country</span>
-                                <span class="ml-auto"><a href="#">Book Now</a></span>
+                                <span class="ml-auto">
+                                    <a asp-controller="Reservation" asp-action="Create" asp-route-roomId="@item.RoomId" class="btn btn-link">Book Now</a>
+                                </span>
                             </p>
+
                         </div>
                     </div>
                 </div>

@@ -16,8 +16,10 @@ namespace Entity.Entites
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+		public string IdentityUserId { get; set; } // Identity kullanıcı kimliği
 
-        // Navigation Property
-        public ICollection<Reservation> Reservations { get; set; }
+
+		// Navigation Property
+		public ICollection<Reservation> Reservations { get; set; }
     }
 }

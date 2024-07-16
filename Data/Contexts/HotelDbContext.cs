@@ -38,8 +38,12 @@ namespace Data.Contexts
                 .HasMany(res => res.Payments)
                 .WithOne(p => p.Reservation)
                 .HasForeignKey(p => p.ReservationId);
+           
+            modelBuilder.Entity<Payment>()
+                .HasOne(p => p.Reservation)
+                .WithMany(r => r.Payments)
+                .HasForeignKey(p => p.ReservationId);
 
-            
 
             // Seed data
             modelBuilder.Entity<Hotel>().HasData(
@@ -109,7 +113,8 @@ namespace Data.Contexts
                     FirstName = "Ahmet",
                     LastName = "Yılmaz",
                     Email = "ahmet.yilmaz@example.com",
-                    Phone = "0532-123-4567"
+                    Phone = "0532-123-4567",
+                    IdentityUserId = "1"
                 },
                 new Customer
                 {
@@ -117,7 +122,8 @@ namespace Data.Contexts
                     FirstName = "Ayşe",
                     LastName = "Kara",
                     Email = "ayse.kara@example.com",
-                    Phone = "0543-987-6543"
+                    Phone = "0543-987-6543",
+                    IdentityUserId = "2"
                 }
             );
 

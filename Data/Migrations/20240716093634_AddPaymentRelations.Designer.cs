@@ -4,6 +4,7 @@ using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240716093634_AddPaymentRelations")]
+    partial class AddPaymentRelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,10 +151,6 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdentityUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -170,7 +169,6 @@ namespace Data.Migrations
                             CustomerId = 1,
                             Email = "ahmet.yilmaz@example.com",
                             FirstName = "Ahmet",
-                            IdentityUserId = "1",
                             LastName = "Yılmaz",
                             Phone = "0532-123-4567"
                         },
@@ -179,7 +177,6 @@ namespace Data.Migrations
                             CustomerId = 2,
                             Email = "ayse.kara@example.com",
                             FirstName = "Ayşe",
-                            IdentityUserId = "2",
                             LastName = "Kara",
                             Phone = "0543-987-6543"
                         });
