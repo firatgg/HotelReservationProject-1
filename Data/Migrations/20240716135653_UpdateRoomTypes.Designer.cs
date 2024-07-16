@@ -4,6 +4,7 @@ using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240716135653_UpdateRoomTypes")]
+    partial class UpdateRoomTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -399,7 +402,7 @@ namespace Data.Migrations
                             Description = "Konforlu tek kişilik oda",
                             HotelId = 1,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-1.jpg",
+                            PictureUrl = "",
                             Price = 750.00m,
                             RoomNumber = "101",
                             Type = "Tek Kişilik"
@@ -410,7 +413,7 @@ namespace Data.Migrations
                             Description = "Geniş çift kişilik oda",
                             HotelId = 1,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-2.jpg",
+                            PictureUrl = "",
                             Price = 1200.00m,
                             RoomNumber = "102",
                             Type = "Çift Kişilik"
@@ -421,10 +424,10 @@ namespace Data.Migrations
                             Description = "Geniş aile odası",
                             HotelId = 1,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-3.jpg",
+                            PictureUrl = "",
                             Price = 1200.00m,
-                            RoomNumber = "103",
-                            Type = "Aile Odası"
+                            RoomNumber = "102",
+                            Type = "Aile Odask"
                         },
                         new
                         {
@@ -432,9 +435,9 @@ namespace Data.Migrations
                             Description = "Lüks süit oda.",
                             HotelId = 1,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-4.jpg",
+                            PictureUrl = "",
                             Price = 850.00m,
-                            RoomNumber = "104",
+                            RoomNumber = "201",
                             Type = "Süit"
                         },
                         new
@@ -443,7 +446,7 @@ namespace Data.Migrations
                             Description = "Deniz manzaralı tek kişilik oda",
                             HotelId = 2,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-5.jpg",
+                            PictureUrl = "",
                             Price = 850.00m,
                             RoomNumber = "201",
                             Type = "Tek kişilik"
@@ -454,9 +457,9 @@ namespace Data.Migrations
                             Description = "Geniş çift kişilik oda",
                             HotelId = 2,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-6.jpg",
+                            PictureUrl = "",
                             Price = 850.00m,
-                            RoomNumber = "202",
+                            RoomNumber = "201",
                             Type = "Çift Kişik"
                         },
                         new
@@ -465,10 +468,10 @@ namespace Data.Migrations
                             Description = "Geniş aile odası",
                             HotelId = 2,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-1.jpg",
+                            PictureUrl = "",
                             Price = 850.00m,
-                            RoomNumber = "203",
-                            Type = "Aile Odası"
+                            RoomNumber = "201",
+                            Type = "Aile Odask"
                         },
                         new
                         {
@@ -476,9 +479,9 @@ namespace Data.Migrations
                             Description = "Lüks süit oda.",
                             HotelId = 2,
                             IsAvailable = true,
-                            PictureUrl = "/images/room-2.jpg",
+                            PictureUrl = "",
                             Price = 850.00m,
-                            RoomNumber = "204",
+                            RoomNumber = "201",
                             Type = "Süit"
                         });
                 });

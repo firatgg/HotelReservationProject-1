@@ -82,7 +82,8 @@ namespace Data.Contexts
                     Price = 750.00m, // TL cinsinden
                     Description = "Konforlu tek kişilik oda",
                     IsAvailable = true,
-                    HotelId = 1
+                    HotelId = 1,
+                    PictureUrl ="/images/room-1.jpg"
                 },
                 new Room
                 {
@@ -92,19 +93,78 @@ namespace Data.Contexts
                     Price = 1200.00m, // TL cinsinden
                     Description = "Geniş çift kişilik oda",
                     IsAvailable = true,
-                    HotelId = 1
-                },
-                new Room
+                    HotelId = 1,
+					PictureUrl = "/images/room-2.jpg"
+				},
+				new Room
+				{
+					RoomId = 3,
+					RoomNumber = "103",
+					Type = "Aile Odası",
+					Price = 1200.00m, // TL cinsinden
+					Description = "Geniş aile odası",
+					IsAvailable = true,
+					HotelId = 1,
+					PictureUrl = "/images/room-3.jpg"
+				},
+				new Room
+				{
+					RoomId = 4,
+					RoomNumber = "104",
+					Type = "Süit",
+					Price = 850.00m, // TL cinsinden
+					Description = "Lüks süit oda.",
+					IsAvailable = true,
+					HotelId = 1,
+					PictureUrl = "/images/room-4.jpg"
+				},
+
+
+				new Room
                 {
-                    RoomId = 3,
+                    RoomId = 5,
                     RoomNumber = "201",
-                    Type = "Tek Kişilik",
+                    Type = "Tek kişilik",
                     Price = 850.00m, // TL cinsinden
                     Description = "Deniz manzaralı tek kişilik oda",
                     IsAvailable = true,
-                    HotelId = 2
-                }
-            );
+                    HotelId = 2,
+					PictureUrl = "/images/room-5.jpg"
+				},
+				new Room
+				{
+					RoomId = 6,
+					RoomNumber = "202",
+					Type = "Çift Kişik",
+					Price = 850.00m, // TL cinsinden
+					Description = "Geniş çift kişilik oda",
+					IsAvailable = true,
+					HotelId = 2,
+					PictureUrl = "/images/room-6.jpg"
+				},
+				new Room
+				{
+					RoomId = 7,
+					RoomNumber = "203",
+					Type = "Aile Odası",
+					Price = 850.00m, // TL cinsinden
+					Description = "Geniş aile odası",
+					IsAvailable = true,
+					HotelId = 2,
+					PictureUrl = "/images/room-1.jpg"
+				},
+				new Room
+				{
+					RoomId = 8,
+					RoomNumber = "204",
+					Type = "Süit",
+					Price = 850.00m, // TL cinsinden
+					Description = "Lüks süit oda.",
+					IsAvailable = true,
+					HotelId = 2,
+					PictureUrl = "/images/room-2.jpg"
+				}
+			);
 
             modelBuilder.Entity<Customer>().HasData(
                 new Customer

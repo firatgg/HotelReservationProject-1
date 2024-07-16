@@ -4,6 +4,7 @@ using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240716140221_UpdateRoomType-AileOdaskToAileOdası")]
+    partial class UpdateRoomTypeAileOdaskToAileOdası
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -423,7 +426,7 @@ namespace Data.Migrations
                             IsAvailable = true,
                             PictureUrl = "/images/room-3.jpg",
                             Price = 1200.00m,
-                            RoomNumber = "103",
+                            RoomNumber = "102",
                             Type = "Aile Odası"
                         },
                         new
@@ -434,7 +437,7 @@ namespace Data.Migrations
                             IsAvailable = true,
                             PictureUrl = "/images/room-4.jpg",
                             Price = 850.00m,
-                            RoomNumber = "104",
+                            RoomNumber = "201",
                             Type = "Süit"
                         },
                         new
@@ -456,7 +459,7 @@ namespace Data.Migrations
                             IsAvailable = true,
                             PictureUrl = "/images/room-6.jpg",
                             Price = 850.00m,
-                            RoomNumber = "202",
+                            RoomNumber = "201",
                             Type = "Çift Kişik"
                         },
                         new
@@ -467,7 +470,7 @@ namespace Data.Migrations
                             IsAvailable = true,
                             PictureUrl = "/images/room-1.jpg",
                             Price = 850.00m,
-                            RoomNumber = "203",
+                            RoomNumber = "201",
                             Type = "Aile Odası"
                         },
                         new
@@ -478,7 +481,7 @@ namespace Data.Migrations
                             IsAvailable = true,
                             PictureUrl = "/images/room-2.jpg",
                             Price = 850.00m,
-                            RoomNumber = "204",
+                            RoomNumber = "201",
                             Type = "Süit"
                         });
                 });
