@@ -60,5 +60,28 @@ namespace HotelReservation.Controllers
 			// Payment sayfasına yönlendirme
 			return RedirectToAction("Create", "Payments", new { reservationId = reservation.ReservationId });
 		}
+
+        [HttpGet]
+        public async Task<IActionResult> MyReservations()
+        {
+            // Oturum açmış kullanıcının kimliğini al
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // Kullanıcının müşteri kimliğini al
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.IdentityUserId == userId);
+            if (customer == null)
+            {
+                return NotFound("Customer not found for the current user.");
+            }
+
+            // Kullanıcının rezervasyonlarını al
+            var reservations = await _context.Reservations
+                .Where(r => r.CustomerId == customer.CustomerId)
+                .Include(r => r.Room)
+                .ThenInclude(r => r.Hotel)
+                .ToListAsync();
+
+            return View(reservations);
+        }
     }
 }

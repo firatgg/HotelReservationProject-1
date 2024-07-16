@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Entity.Entites.Reservation>
+
+@{
+    ViewData["Title"] = "My Reservations";
+}
+
+<h2>My Reservations</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Reservation ID</th>
+            <th>Hotel Name</th>
+            <th>Room Type</th>
+            <th>Check-In Date</th>
+            <th>Check-Out Date</th>
+            <th>Total Price</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.ReservationId</td>
+                <td>@reservation.Room.Hotel.Name</td>
+                <td>@reservation.Room.Type</td>
+                <td>@reservation.CheckInDate.ToString("d")</td>
+                <td>@reservation.CheckOutDate.ToString("d")</td>
+                <td>@reservation.TotalPrice.ToString("C")</td>
+                <td>@reservation.ReservationStatus</td>
+            </tr>
+        }
+    </tbody>
+</table>
