@@ -100,10 +100,10 @@ Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE](L
 
 Herhangi bir soru veya öneriniz için lütfen proje yöneticisi ile iletişime geçin:
 
-- **Fırat Gültekin** - [E-posta](mailto:euphratesgultekin@gmail.com)
-- **Emirhan Yıldız** - [E-posta](mailto:kucuk.hotonoglu@gmail.com)
-- **Hüseyin Can Aksoy** - [E-posta](mailto:huseyincanaksoy1@outlook.com)
-- 
+- **Fırat Gültekin** - [euphratesgultekin@gmail.com](mailto:euphratesgultekin@gmail.com)
+- **Emirhan Yıldız** - [kucuk.hotonoglu@gmail.com](mailto:kucuk.hotonoglu@gmail.com)
+- **Hüseyin Can Aksoy** - [huseyincanaksoy1@outlook.com](mailto:huseyincanaksoy1@outlook.com)
+ 
 
 ---
 
